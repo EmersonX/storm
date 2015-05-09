@@ -1,10 +1,11 @@
+import spouts.WordNormalizer;
 import spouts.WordReader;
+import bolts.WordCounter;
 import backtype.storm.Config;
 import backtype.storm.LocalCluster;
 import backtype.storm.topology.TopologyBuilder;
 import backtype.storm.tuple.Fields;
-import bolts.WordCounter;
-import bolts.WordNormalizer;
+
 public class TopologyMain {
     public static void main(String[] args) throws InterruptedException {
         //Topology definition

@@ -1,4 +1,5 @@
 package bolts;
+
 import java.util.HashMap;
 import java.util.Map;
 import backtype.storm.task.OutputCollector;
