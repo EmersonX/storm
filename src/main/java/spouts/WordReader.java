@@ -70,8 +70,7 @@ public void open(Map conf, TopologyContext context,
         this.context = context;
         this.fileReader = new FileReader(conf.get("wordsFile").toString());
     } catch (FileNotFoundException e) {
-        throw new RuntimeException("Error reading file
-                ["+conf.get("wordFile")+"]");
+        throw new RuntimeException("Error reading file[" + conf.get("wordFile") + "]" );
     }
     this.collector = collector;
 }
