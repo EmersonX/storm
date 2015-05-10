@@ -25,7 +25,7 @@ public class WordReader implements IRichSpout {
 public void close() {}
 
 public void fail(Object msgId) {
-System.out.println("FAIL:"+msgId);
+	System.out.println("FAIL:"+msgId);
 }
 /**
 * The only thing that the methods will do It is emit each
@@ -40,26 +40,26 @@ public void nextTuple() {
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
-//Do nothing
-}
-return;
-}
-String str;
-//Open the reader
-BufferedReader reader = new BufferedReader(fileReader);
-try{
-//Read all lines
-while((str = reader.readLine()) != null){
-/**
+        	//Do nothing
+        }
+        return;
+    }
+    String str;
+    //Open the reader
+    BufferedReader reader = new BufferedReader(fileReader);
+    try{
+    	//Read all lines
+    	while((str = reader.readLine()) != null){
+    		/**
 * By each line emmit a new value with the line as a their
 */
-this.collector.emit(new Values(str),str);
-}
-}catch(Exception e){
-throw new RuntimeException("Error reading tuple",e);
-}finally{
-completed = true;
-}
+    	this.collector.emit(new Values(str),str);
+    	}
+    }catch(Exception e){
+		throw new RuntimeException("Error reading tuple",e);
+	}finally{
+	completed = true;
+	}
 }
 /**
  * * We will create the file and get the collector object
